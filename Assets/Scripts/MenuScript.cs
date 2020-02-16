@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class MenuScript : MonoBehaviour
 {
-    public Animator animator;
+    public Animator ToddAnimator;
+    public Animator MenuAnimator;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +22,13 @@ public class MenuScript : MonoBehaviour
         StartCoroutine(Quit2());
     }
 
+    public void Settings()
+    {
+        MenuAnimator.SetTrigger("MenuTrigger");
+    }
+
     private IEnumerator Quit2() {
-        animator.SetTrigger("FadeOutTrigger");
+        ToddAnimator.SetTrigger("FadeOutTrigger");
         yield return new WaitForSeconds(1);
         Application.Quit();
     }
