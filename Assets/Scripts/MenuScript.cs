@@ -6,17 +6,17 @@ public class MenuScript : MonoBehaviour
 {
     public Animator ToddAnimator;
     public Animator MenuAnimator;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     public void Play()
     {
-
+        StartCoroutine(Play2());
     }
 
+    private IEnumerator Play2() {
+        MenuAnimator.SetTrigger("PlayTrigger");
+        yield return new WaitForSeconds(1);
+        this.gameObject.SetActive(false);
+    }
     public void Quit()
     {
         StartCoroutine(Quit2());
