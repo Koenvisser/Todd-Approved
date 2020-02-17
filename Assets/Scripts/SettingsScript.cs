@@ -17,6 +17,8 @@ public class SettingsScript : MonoBehaviour
 
     public Slider resolutionSlider;
     public Slider fullscreenSlider;
+    public Slider graphicsSlider;
+    public Slider volumeSlider;
     public GameObject resolutionText;
 
     Resolution[] resolutions;
